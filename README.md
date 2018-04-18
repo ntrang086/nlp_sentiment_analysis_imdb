@@ -1,40 +1,42 @@
-# AIND: Natural Language Processing
+# Sentiment Analysis on Movie Reviews
 
-Coding exercises for the Natural Language Processing concentration, part of Udacity's Artificial Intelligence Nanodegree program.
+## Introduction
+Build an end-to-end sentiment classification system from scratch. The system accepts a movie review as input and classifies it as either positive or negative. There are three main steps:
+
+* Preprocess the data - Split the data into train and test sets, tokenize, stem words, create bag-of-words features, etc.
+* Models - Create and experiment with different models: GaussianNB, Gradient-Boosted Decision Tree classifier and Recurrent Neural Network.
+* Evaluation - Compare the performances of the models and outline steps to make the chosen model do better.
+
+## Code
+
+* `sentiment_analysis.ipynb` - Main code for sentiment analysis.
+* `text_processing.ipynb` - Exampe code on how to preprocess data.
 
 ## Setup
 
-You need Python 3.6+, and the packages mentioned in `requirements.txt`. You can install them using:
+* Python 3.6+
+* The packages mentioned in `requirements.txt`. They can be installed using:
 
-```bash
-pip install -r requirements.txt
-```
+  `pip install -r requirements.txt`
 
 ## Data
 
-Data files for exercises are included under `data/`, but some of the NLP libraries require additional data for performing tasks like 
-PoS tagging, lemmatization, etc. Specifically, `nltk` will throw an error if the required data is not installed. You can use the 
-following Python statement to open the NLTK downloader and select the desired package(s) to install:
+* Data files for the sentiment analysis project are included under `data/imdb-reviews`. These are movie reviews from the website [imdb.com](https://www.imdb.com/), each labeled as either 'positive', if the reviewer enjoyed the film, or 'negative' otherwise. 
+* These files take a while to load. To save time from reading them in everytime I run the notebook, I have created `data.pickle` and `labels.pickle` in the Explore step in `sentiment_analysis.ipynb`. As long as these pickle files are present in the same directory, I don't have to read in the review files from scratch.
+* The rest of the data files in `data/` are for `text_processing.ipynb`.
+* Some of the NLP libraries require additional data for performing tasks like stopwords, PoS tagging, lemmatization, etc. Specifically, `nltk` will throw an error if the required data is not installed. You can use the following Python statement (in Linux terminal or in a code editor) to open the NLTK downloader and select the desired package(s) to install:
 
-```python
-nltk.download()
-```
+  `nltk.download()`
 
-You can also download all available NLTK data packages, which includes a number of sample corpora as well, but that may take a while 
-(10+GB).
+  You can also download all available NLTK data packages, which includes a number of sample corpora as well, but that may take a while (10+GB).
 
 ## Run
 
 To run any script file, use:
 
-```bash
-python <script.py>
-```
+`python <script.py>`
 
 To open a notebook, use:
 
-```bash
-jupyter notebook <notebook.ipynb>
-```
+`jupyter notebook <notebook.ipynb>`
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. Please refer to [Udacity Terms of Service](https://www.udacity.com/legal) for further information.
